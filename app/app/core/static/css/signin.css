@@ -1,0 +1,14 @@
+.signin_main_containeir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 600px;
+  width: 400px;
+
+  background: #ccc;
+
+  margin: 0 auto;
+  line-height: 1.7em;
+}

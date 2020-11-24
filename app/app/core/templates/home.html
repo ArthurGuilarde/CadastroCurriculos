@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+
+
+{% block content %}
+
+
+
+<div class="home_main_container">
+  <form method="get" class='filter'>
+    {{ filter.form  }}
+    <button type="submit">Procurar</button>
+  </form>
+
+  <table class="table">
+    <th>
+      <tr>
+        <td class="thead">Vaga</td>
+        <td class="thead">Descrição</td>
+        <td class="thead">Ultima atualização</td>
+        <td class="thead">Filme</td>
+      </tr>
+    </th>
+    
+    {% for field  in filter.qs %}
+    <tb>
+      <tr>
+        <td class='tbody'>{{field.name}}</td>
+        <td class='tbody'>{{field.description}}</td>
+        <td class='tbody'>{{field.updated_at}}</td>
+        <td class='tbody'>{{movies | random }}</td>
+      </tr>
+    </tb>
+    {% endfor %}
+  
+  </table>
+</div>
+
+{% endblock %}

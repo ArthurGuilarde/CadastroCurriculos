@@ -1,0 +1,38 @@
+.home_main_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.filter {
+  margin-top: 8px;
+  display: flex;
+}
+.filter input,
+label,
+button {
+  margin-left: 12px;
+}
+
+.table {
+  width: 100%;
+  margin: 0;
+  border-spacing: 8px;
+  text-align: center;
+}
+
+.thead {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #ffff;
+  background-color: blue;
+}
+
+.tbody {
+  font-size: 20px;
+  background-color: #e0e0e0;
+  border: 2px solid #757575;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+}

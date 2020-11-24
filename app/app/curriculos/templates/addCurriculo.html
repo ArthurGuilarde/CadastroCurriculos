@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %} {% if form.errors %}
+<p>{{ form.errors }}</p>
+<p>Please try again.</p>
+{% endif %} {% if next %} {% if user.is_authenticated %}
+<p>
+  Your account doesn't have access to this page. To proceed, please login with
+  an account that has access.
+</p>
+{% else %}
+<p>Please login to see this page.</p>
+{% endif %} {% endif %}
+
+<form
+  class="curriculo_main_containeir"
+  method="post"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <h3>Adicione seu curriculo</h3>
+  <div>{% for field in form %} {{ field }} {% endfor %}</div>
+
+  <input type="submit" value="Add" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{% endblock %}
