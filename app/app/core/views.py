@@ -8,15 +8,15 @@ from .filters import VagasFilter
 
 # Create your views here.
 def home(request):
-  movies = ['M1', 'M2']
+  movies = []
 
-  # choice = random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-  # api_response = requests.get(f'http://www.omdbapi.com/?apikey=f7bb1681&i=tt128501{choice}')
-  # movies.append(api_response.json()['Title'])
+  choice = random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  api_response = requests.get(f'http://www.omdbapi.com/?apikey=f7bb1681&i=tt128501{choice}')
+  movies.append(api_response.json()['Title'])
 
-  # choice = random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-  # api_response = requests.get(f'http://www.omdbapi.com/?apikey=f7bb1681&i=tt12850{choice}8')
-  # movies.append(api_response.json()['Title'])
+  choice = random.choice([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+  api_response = requests.get(f'http://www.omdbapi.com/?apikey=f7bb1681&i=tt12850{choice}8')
+  movies.append(api_response.json()['Title'])
   
   
 
@@ -32,7 +32,7 @@ def signup(request):
     form = SignUpForm(request.POST)
     if form.is_valid():
       form.save()
-      return redirect('core:signin')
+      return redirect('core:home')
   else:
     form = SignUpForm()
 

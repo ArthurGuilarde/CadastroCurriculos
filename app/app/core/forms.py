@@ -12,7 +12,7 @@ class SignUpForm(UserCreationForm):
       if User.objects.filter(email=email).exists():
         raise forms.ValidationError('E-mail já cadastrado')
       
-      return data
+      return email
   
 
 
